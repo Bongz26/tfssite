@@ -1,0 +1,333 @@
+/* Hero Section - Professional Modern Design */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    /* Using a professional stock photo - replace with your own professional funeral service photo */
+    background-image: url('/hero-funeral.jpg?v=2');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 5rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(114, 32, 47, 0.92) 0%,
+            rgba(114, 32, 47, 0.85) 50%,
+            rgba(217, 170, 62, 0.75) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    width: 100%;
+}
+
+.hero-main {
+    color: white;
+    padding-right: 2rem;
+}
+
+.hero-title {
+    font-size: 3.25rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 1.25rem;
+    color: white;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+    color: var(--color-secondary);
+    display: inline;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin: 0 0 2.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 580px;
+    font-weight: 400;
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    max-width: 580px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--color-secondary);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+}
+
+/* Hero CTAs */
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    padding: 1.25rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: none;
+}
+
+.btn-hero-primary {
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    box-shadow: 0 8px 24px rgba(217, 170, 62, 0.4);
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(217, 170, 62, 0.5);
+    background: #e8b454;
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.phone-icon {
+    font-size: 1.25rem;
+}
+
+/* Quick Links Card */
+.hero-aside {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.quick-links-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quick-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-gray-50);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.quick-link-btn:hover {
+    background: white;
+    border-color: var(--color-secondary);
+    transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(217, 170, 62, 0.2);
+}
+
+.link-icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.link-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.link-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.link-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.link-arrow {
+    flex-shrink: 0;
+    color: var(--color-secondary);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.quick-link-btn:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.card-footer {
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--color-gray-100);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.check-icon {
+    flex-shrink: 0;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Bottom Wave */
+.hero-bottom-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    clip-path: ellipse(100% 100% at 50% 100%);
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+
+    .hero-stats {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 4rem 0 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .quick-links-card {
+        padding: 2rem 1.5rem;
+    }
+}

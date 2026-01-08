@@ -1,0 +1,128 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: var(--color-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    transition: opacity 0.3s;
+}
+
+.navbar.scrolled .top-bar {
+    display: none;
+    /* Hide top bar on scroll like Numsa site often does, or keep it smaller */
+}
+
+.main-nav {
+    padding: 1rem 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.main-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-main);
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.btn-premium {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #d4a73d 100%);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 170, 62, 0.4);
+}
+
+@media (max-width: 960px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .cta-group {
+        display: none;
+    }
+
+    /* Mobile menu needed later */
+}
