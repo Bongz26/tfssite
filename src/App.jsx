@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
+import CasketGallery from './components/CasketGallery'
 import Footer from './components/Footer'
 import ServiceModal from './components/ServiceModal'
 import PayPremium from './components/PayPremium'
@@ -37,6 +38,7 @@ function App() {
       <Hero onOpenService={(service) => handleOpenModal(service, 'green')} />
       <About />
       <Services />
+      <CasketGallery />
       <Footer />
       <ServiceModal
         isOpen={isModalOpen}
