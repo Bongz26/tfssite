@@ -115,14 +115,112 @@
     box-shadow: 0 6px 20px rgba(217, 170, 62, 0.4);
 }
 
-@media (max-width: 960px) {
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-primary);
+}
+
+.mobile-only {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    background: white;
+    border-top: 1px solid var(--color-gray-200);
+    padding: 1.5rem 0;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.mobile-nav a {
+    padding: 1rem;
+    color: var(--text-main);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-gray-100);
+    transition: all 0.2s;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+    color: var(--color-primary);
+    background: var(--color-gray-50);
+}
+
+.mobile-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem 0.5rem;
+    border-top: 2px solid var(--color-gray-100);
+    margin-top: 1rem;
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .desktop-only {
-        display: none;
+        display: none !important;
     }
 
-    .cta-group {
-        display: none;
+    .mobile-only {
+        display: block;
     }
 
-    /* Mobile menu needed later */
+    .mobile-menu {
+        display: block;
+    }
+
+    .main-nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-main {
+        font-size: 1.5rem;
+    }
+
+    .logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 3px;
+    }
+
+    .top-bar {
+        font-size: 0.75rem;
+        padding: 0.4rem 0;
+    }
+
+    .top-right {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-main {
+        font-size: 1.25rem;
+    }
+
+    .logo-sub {
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .top-left {
+        font-size: 0.7rem;
+    }
 }

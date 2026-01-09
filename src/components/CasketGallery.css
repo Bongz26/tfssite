@@ -194,3 +194,45 @@
         font-size: 1.1rem;
     }
 }
+
+/* Single column for very small screens */
+@media (max-width: 520px) {
+    .casket-gallery-section {
+        padding: 2rem 0;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .casket-filters {
+        gap: 0.5rem;
+        margin: 1.5rem 0 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .casket-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+
+    .casket-image-wrapper {
+        height: 250px;
+    }
+
+    .casket-info {
+        padding: 1.25rem 1rem;
+    }
+
+    .casket-name {
+        font-size: 1rem;
+    }
+
+    .casket-description {
+        font-size: 0.85rem;
+    }
+}

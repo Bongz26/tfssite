@@ -120,6 +120,30 @@ const Hero = ({ onOpenService }) => {
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </button>
+                            <button
+                                className="quick-link-btn"
+                                onClick={() => {
+                                    const element = document.getElementById('caskets');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                            >
+                                <svg className="link-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                <div className="link-content">
+                                    <span className="link-title">Our Collection</span>
+                                    <span className="link-desc">View our full range</span>
+                                </div>
+                                <svg className="link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
                         </div>
 
                         <div className="card-footer">

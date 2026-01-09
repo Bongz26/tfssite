@@ -140,6 +140,24 @@ const CasketGallery = () => {
             category: 'steel',
             description: 'Durable steel construction',
             image: '/caskets/steel-casket-copper.jpg'
+        },
+        {
+
+            id: 18,
+            name: 'LINCOLN',
+            wood: 'MAHOGANY',
+            category: 'premium',
+            description: 'Available in mahogany, cherry',
+            image: '/caskets/lincoln.jpg'
+
+        },
+        {
+            id: 19,
+            name: 'LAPITA',
+            wood: 'CHERRY',
+            category: 'premium',
+            description: 'Available in cherry, pecan',
+            image: '/caskets/lapita-cherry.jpg'
         }
     ];
 
@@ -158,7 +176,7 @@ const CasketGallery = () => {
         : caskets.filter(c => c.category === selectedCategory);
 
     return (
-        <section className="casket-gallery-section">
+        <section id="caskets" className="casket-gallery-section">
             <div className="container">
                 <div className="section-header text-center">
                     <h4 className="sub-heading">OUR COLLECTION</h4>
