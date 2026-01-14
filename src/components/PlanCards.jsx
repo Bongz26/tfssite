@@ -44,7 +44,7 @@ const PlanCard = ({ planName, options, description, image, onView, colorClass, p
     );
 };
 
-const PlanCards = ({ onSelectPlan, planCategory = 'motjha' }) => {
+const PlanCards = ({ onSelectPlan, planCategory = 'motjha', onCategoryChange }) => {
     // MOTJHA O TJHELE / SOCIETY PLANS
     const motjhaPlans = [
         {
@@ -211,8 +211,23 @@ const PlanCards = ({ onSelectPlan, planCategory = 'motjha' }) => {
             <div className="plan-category-header">
                 <h3 className="category-title">{categoryTitle}</h3>
                 <p className="category-description">{categoryDesc}</p>
+
+                <div className="category-toggle">
+                    <button
+                        className={`toggle-btn ${planCategory === 'motjha' ? 'active' : ''}`}
+                        onClick={() => onCategoryChange('motjha')}
+                    >
+                        Motjha / Society
+                    </button>
+                    <button
+                        className={`toggle-btn ${planCategory === 'single-family' ? 'active' : ''}`}
+                        onClick={() => onCategoryChange('single-family')}
+                    >
+                        Single / Family
+                    </button>
+                </div>
             </div>
-            <div className="plan-cards-grid-simple">
+            <div className="plan-cards-grid-simple" key={planCategory}>
                 {plans.map(plan => (
                     <PlanCard
                         key={plan.id}

@@ -37,10 +37,12 @@ const Hero = ({ onOpenService }) => {
                         <div className="hero-cta">
                             <button
                                 className="btn-hero-primary"
-                                onClick={() => onOpenService({
-                                    title: "Funeral Cover",
-                                    description: "Affordable and comprehensive funeral plans designed to give you peace of mind."
-                                })}
+                                onClick={() => {
+                                    const element = document.getElementById('services');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
                             >
                                 View Funeral Plans
                             </button>
@@ -60,10 +62,12 @@ const Hero = ({ onOpenService }) => {
                         <div className="quick-links">
                             <button
                                 className="quick-link-btn"
-                                onClick={() => onOpenService({
-                                    title: "Funeral Cover",
-                                    description: "Affordable and comprehensive funeral plans"
-                                })}
+                                onClick={() => {
+                                    const element = document.getElementById('services');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
                             >
                                 <svg className="link-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>

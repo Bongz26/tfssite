@@ -5,8 +5,8 @@ import PlanOverview from './PlanOverview';
 import ServiceModal from './ServiceModal';
 import ServicesGrid from './ServicesGrid';
 
-const Services = () => {
-    const [currentView, setCurrentView] = useState('intro'); // 'intro', 'services-grid', 'plans', 'overview', 'details'
+const Services = ({ currentView, onViewChange }) => {
+    // currentView and onViewChange are now controlled by parent (App.jsx)
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [selectedPlanOptions, setSelectedPlanOptions] = useState(null);
     const [selectedService, setSelectedService] = useState(null);
@@ -14,12 +14,12 @@ const Services = () => {
     const [planCategory, setPlanCategory] = useState('motjha'); // 'motjha' or 'single-family'
 
     const handleViewServices = () => {
-        setCurrentView('services-grid');
+        onViewChange('services-grid');
     };
 
     const handleViewPlans = (category = 'motjha') => {
         setPlanCategory(category);
-        setCurrentView('plans');
+        onViewChange('plans');
     };
 
     const handleSelectPlan = (planId, action, options, category) => {
@@ -27,7 +27,7 @@ const Services = () => {
         setSelectedPlanOptions(options);
         setPlanCategory(category);
         if (action === 'overview') {
-            setCurrentView('overview');
+            onViewChange('overview');
         } else if (action === 'apply') {
             setIsModalOpen(true);
         }
@@ -48,6 +48,12 @@ const Services = () => {
             });
             setIsModalOpen(true);
         }
+        else if (service.id === 'caskets') {
+            const element = document.getElementById('caskets');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         else {
             setSelectedService(service);
             setIsModalOpen(true);
@@ -59,17 +65,17 @@ const Services = () => {
     };
 
     const handleBackToPlans = () => {
-        setCurrentView('plans');
+        onViewChange('plans');
     };
 
     const handleBackToIntro = () => {
-        setCurrentView('intro');
+        onViewChange('intro');
         setSelectedPlan(null);
         setSelectedService(null);
     };
 
     const handleBackToServices = () => {
-        setCurrentView('services-grid');
+        onViewChange('services-grid');
     };
 
     const handleCloseModal = () => {
@@ -92,10 +98,10 @@ const Services = () => {
                         </p>
                         <div className="intro-buttons">
                             <button className="btn btn-primary" onClick={() => handleViewPlans('motjha')}>
-                                MOTJHA / Society Plans
+                                MOTJHA / SOCIETY PLANS
                             </button>
                             <button className="btn btn-primary" onClick={() => handleViewPlans('single-family')}>
-                                Single / Family Plans
+                                SINGLE / FAMILY PLANS
                             </button>
                             <button className="btn btn-secondary" onClick={handleViewServices}>
                                 TOP-UP SERVICES
@@ -114,7 +120,11 @@ const Services = () => {
                 {currentView === 'plans' && (
                     <>
                         <button className="btn-back-to-intro" onClick={handleBackToIntro}>← Back</button>
-                        <PlanCards onSelectPlan={handleSelectPlan} planCategory={planCategory} />
+                        <PlanCards
+                            onSelectPlan={handleSelectPlan}
+                            planCategory={planCategory}
+                            onCategoryChange={setPlanCategory}
+                        />
                     </>
                 )}
 

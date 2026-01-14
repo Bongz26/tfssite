@@ -4,7 +4,7 @@ import './ServicesGrid.css';
 const ServiceCard = ({ title, image, description, onSelect }) => {
     return (
         <div className="service-grid-card" onClick={onSelect}>
-            <div className="service-grid-image" style={{ backgroundImage: `url('/hero-funeral.jpg')` }}>
+            <div className="service-grid-image" style={{ backgroundImage: `url('${image}')` }}>
                 <div className="service-grid-overlay"></div>
             </div>
             <div className="service-grid-label">
@@ -25,7 +25,7 @@ const ServicesGrid = ({ onSelectService }) => {
         {
             id: 'kgomo',
             title: 'KGOMO (COW)',
-            image: '/service-funeral.jp',
+            image: '/service-cow.png',
             description: 'Traditional cattle provisions for cultural ceremonies'
         },
         {
@@ -43,13 +43,13 @@ const ServicesGrid = ({ onSelectService }) => {
         {
             id: 'groceries',
             title: 'GROCERIES',
-            image: '/service-groceries.jpg',
+            image: '/service-grocery.png',
             description: 'Essential grocery packages including rice, maize, oil, and more'
         },
         {
             id: 'cars',
             title: 'CARS',
-            image: '/service-vehicles.jpg',
+            image: '/service-fleet.png',
             description: 'Professional hearse and family transportation fleet'
         },
         {
@@ -61,13 +61,13 @@ const ServicesGrid = ({ onSelectService }) => {
         {
             id: 'caskets',
             title: 'CASKETS',
-            image: '/service-caskets.jpg',
+            image: '/Nguni-Brown-White-Closed.jpg',
             description: 'Wide range of caskets from economy to premium selections'
         },
         {
             id: 'unveiling',
             title: 'UNVEILING',
-            image: '/service-funeral.jpg',
+            image: '/service-unveiling.png',
             description: 'Tombstone unveiling ceremonies and coordination'
         },
         {

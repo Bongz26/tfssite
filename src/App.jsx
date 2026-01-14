@@ -14,6 +14,8 @@ function App() {
   const [planId, setPlanId] = useState('green');
   const [isPayPremiumOpen, setIsPayPremiumOpen] = useState(false);
 
+  const [servicesView, setServicesView] = useState('intro');
+
   const handleOpenModal = (service, plan = 'green') => {
     setSelectedService(service);
     setPlanId(plan);
@@ -32,12 +34,42 @@ function App() {
     setIsPayPremiumOpen(false);
   };
 
+  const handleNavigateToServices = () => {
+    setServicesView('intro');
+    const element = document.getElementById('services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    // Prevent default if it's a link click
+    if (e) e.preventDefault();
+
+    // Reset specific views
+    setServicesView('intro');
+
+    // Scroll to top or home
+    const element = document.getElementById('home');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <Navbar onPayPremium={handleOpenPayPremium} />
-      <Hero onOpenService={(service) => handleOpenModal(service, 'green')} />
+      <Navbar
+        onPayPremium={handleOpenPayPremium}
+        onHomeClick={handleHomeClick}
+      />
+      <Hero
+        onOpenService={(service) => handleOpenModal(service, 'green')}
+        onNavigateToServices={handleNavigateToServices}
+      />
       <About />
-      <Services />
+      <Services currentView={servicesView} onViewChange={setServicesView} />
       <CasketGallery />
       <Footer />
       <ServiceModal
