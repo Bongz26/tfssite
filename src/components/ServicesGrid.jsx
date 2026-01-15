@@ -73,7 +73,7 @@ const ServicesGrid = ({ onSelectService }) => {
         {
             id: 'repatriation',
             title: 'REPATRIATION',
-            image: '/service-funeral.jpg',
+            image: '/service-funeral.png',
             description: 'Repatriation services across South Africa and beyond'
         }
     ];

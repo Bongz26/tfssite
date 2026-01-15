@@ -99,6 +99,20 @@
 .footer-legal-content {
     flex-wrap: wrap;
     gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.developed-by a {
+    color: var(--color-secondary);
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.developed-by a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
 .legal-links .divider {

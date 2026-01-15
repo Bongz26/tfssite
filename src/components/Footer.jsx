@@ -74,6 +74,9 @@ const Footer = () => {
                     <div className="fsp-text">
                         Thusanang Funeral Services is an Authorized Financial Services Provider.
                     </div>
+                    <div className="developed-by">
+                        Developed by <a href="https://dondastech.co.za" target="_blank" rel="noopener noreferrer">Dondas Tech</a>
+                    </div>
                     <div className="legal-links">
                         <a href="#">Privacy Policy</a>
                         <span className="divider">|</span>
